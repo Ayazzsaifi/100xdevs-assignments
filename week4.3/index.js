@@ -8,6 +8,8 @@ const users =[{
     }]
 }];
 
+app.use(express.json());
+
 app.get('/',function(req,res){
     const harkiratkidneys=users[0].firstkidneys;
     const numberrOfKidneys=harkiratkidneys.length;
