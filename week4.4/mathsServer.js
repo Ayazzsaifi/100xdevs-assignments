@@ -1,6 +1,15 @@
 const express = require('express');
 const app = express();
 
+
+app.use(function(req,res,next){
+    const url= req.url;
+    const newdate= new Date();
+    const urlMethod=req.method;
+    console.log("URL access- "+ url + " On date- "+ newdate + "URL Method- "+ urlMethod);
+    next();
+})
+
 app.get('/sum/:a/:b', function (req, res) {
 
     const a = Number(req.params.a);
